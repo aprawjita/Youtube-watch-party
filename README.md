@@ -166,7 +166,8 @@ https://youtube-watch-party-dusky.vercel.app/
 
 **Backend:**  
 https://youtube-watch-party-an8d.onrender.com
-
+  
+"Backend is hosted on Render free tier; initial load may take a few seconds due to cold start."  
 ---
 
 ## 📷 Demo
