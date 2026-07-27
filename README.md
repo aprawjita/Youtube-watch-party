@@ -164,13 +164,13 @@ http://localhost:5173
 Frontend:
 
 ```text
-<Frontend Deployment URL>
+<Frontend Deployment URL> https://youtube-watch-party-dusky.vercel.app/
 ```
 
 Backend:
 
 ```text
-<Backend Deployment URL>
+<Backend Deployment URL> https://youtube-watch-party-an8d.onrender.com
 ```
 
 ---
