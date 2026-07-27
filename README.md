@@ -108,6 +108,24 @@ youtube-watch-party/
 ```
 
 ---
+## 🌐 Live Demo
+
+**Frontend:**  
+https://youtube-watch-party-dusky.vercel.app/
+
+**Backend:**  
+https://youtube-watch-party-an8d.onrender.com
+  
+## "Backend is hosted on Render free tier; initial load may take a few seconds due to cold start."  
+---
+
+## 📷 Demo
+
+(Optional)
+
+Add screenshots or a demo video here.
+
+
 
 ## ⚙ Installation
 
@@ -126,7 +144,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-Backend runs on:
+Backend runs locally on:
 
 ```text
 http://localhost:8080
@@ -140,7 +158,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs on:
+Frontend runs locally on:
 
 ```text
 http://localhost:5173
@@ -159,24 +177,8 @@ http://localhost:5173
 
 ---
 
-## 🌐 Live Demo
-
-**Frontend:**  
-https://youtube-watch-party-dusky.vercel.app/
-
-**Backend:**  
-https://youtube-watch-party-an8d.onrender.com
-  
-"Backend is hosted on Render free tier; initial load may take a few seconds due to cold start."  
----
-
-## 📷 Demo
-
-(Optional)
-
-Add screenshots or a demo video here.
-
----
+git add .
+git commit -m "your change message"
 
 
 
