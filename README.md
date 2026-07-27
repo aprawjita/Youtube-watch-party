@@ -1,4 +1,4 @@
-# 🎬 YouTube Watch Party
+## 🎬 YouTube Watch Party
 
 A real-time YouTube Watch Party application that allows multiple users to watch YouTube videos together in synchronized playback. The application uses WebSockets to keep all participants in sync for play, pause, seek, video changes, and late join synchronization while providing role-based access control.
 
@@ -90,7 +90,7 @@ The application follows a client-server architecture.
 
 ## 📦 Project Structure
 
-```
+```text
 youtube-watch-party/
 │
 ├── frontend/
@@ -128,7 +128,7 @@ mvn spring-boot:run
 
 Backend runs on:
 
-```
+```text
 http://localhost:8080
 ```
 
@@ -142,7 +142,7 @@ npm run dev
 
 Frontend runs on:
 
-```
+```text
 http://localhost:5173
 ```
 
@@ -163,13 +163,13 @@ http://localhost:5173
 
 Frontend:
 
-```
+```text
 <Frontend Deployment URL>
 ```
 
 Backend:
 
-```
+```text
 <Backend Deployment URL>
 ```
 
@@ -182,4 +182,6 @@ Backend:
 Add screenshots or a demo video here.
 
 ---
+
+
 
