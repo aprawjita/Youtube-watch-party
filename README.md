@@ -161,17 +161,11 @@ http://localhost:5173
 
 ## 🌐 Live Demo
 
-Frontend:
+**Frontend:**  
+https://youtube-watch-party-dusky.vercel.app/
 
-```text
-<Frontend Deployment URL> https://youtube-watch-party-dusky.vercel.app/
-```
-
-Backend:
-
-```text
-<Backend Deployment URL> https://youtube-watch-party-an8d.onrender.com
-```
+**Backend:**  
+https://youtube-watch-party-an8d.onrender.com
 
 ---
 
