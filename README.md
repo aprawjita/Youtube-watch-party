@@ -55,11 +55,7 @@ Participants can watch synchronized playback but cannot control the video unless
 - Built full Host transfer capabilities.
 - When a Host transfers leadership to another participant, the system automatically demotes the current host to a regular participant and transfers exclusive room permissions in real time.
 
-### 5. Persistent Room Storage (Spring Data MongoDB)
-- Integrated **Spring Data MongoDB** to persist room states in a MongoDB Atlas cloud cluster.
-- Room metadata, active video ID, playback state, exact timestamp seeking, and participant lists are saved persistently instead of dying on server restart.
-
-### 6. Real-Time Kick & Eviction Protocol
+### 5. Real-Time Kick & Eviction Protocol
 - Engineered a dedicated WebSocket event channel (`/topic/room/{roomId}/kicked`).
 - Allows room Hosts to forcefully remove users, instantly broadcasting eviction events to ensure immediate client-side disconnection.
 
