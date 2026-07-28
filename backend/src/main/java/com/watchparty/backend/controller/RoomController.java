@@ -38,7 +38,7 @@ public class RoomController {
         messagingTemplate.convertAndSend("/topic/room/" + roomId + "/participants", room.getParticipants());
     }
     
-    @MessageMapping("/action")
+   @MessageMapping("/action")
     public void handleAction(@Payload Map<String, Object> action) {
         String roomId = (String) action.get("roomId");
         Room room = activeRooms.get(roomId); 
@@ -52,16 +52,21 @@ public class RoomController {
                 room.setCurrentTime(0.0);
             } else if ("PLAY".equals(type)) {
                 room.setPlayState("PLAYING");
-                if (action.get("time") != null) room.setCurrentTime(((Number) action.get("time")).doubleValue());
+                if (action.get("time") != null) {
+                    room.setCurrentTime(((Number) action.get("time")).doubleValue());
+                }
             } else if ("PAUSE".equals(type)) {
                 room.setPlayState("PAUSED");
-                if (action.get("time") != null) room.setCurrentTime(((Number) action.get("time")).doubleValue());
+                if (action.get("time") != null) {
+                    room.setCurrentTime(((Number) action.get("time")).doubleValue());
+                }
             } else if ("SEEK".equals(type)) {
-                if (action.get("time") != null) room.setCurrentTime(((Number) action.get("time")).doubleValue());
+                if (action.get("time") != null) {
+                    room.setCurrentTime(((Number) action.get("time")).doubleValue());
+                }
             }
 
-            // FIXED: Explicitly cast to (Object) to resolve Java compiler ambiguity
-            messagingTemplate.convertAndSend("/topic/room/" + roomId + "/actions", (Object) action);
+            messagingTemplate.convertAndSend("/topic/room/" + roomId + "/action", (Object) action);
         }
     }
    
@@ -118,7 +123,7 @@ public class RoomController {
     public void syncVideoState(@Payload Map<String, Object> payload) {
         String roomId = String.valueOf(payload.get("roomId"));
         if (roomId != null && !roomId.equals("null")) {
-            // FIXED: Explicitly cast to (Object) to resolve Java compiler ambiguity
+            
             messagingTemplate.convertAndSend("/topic/room/" + roomId + "/sync", (Object) payload);
         }
     }
