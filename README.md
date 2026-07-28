@@ -42,26 +42,26 @@ Participants can watch synchronized playback but cannot control the video unless
 ## 🌟 Bonus Features Implemented
 
 ### 1. In-Room Text Chat
-- Integrated real-time text chat, allowing users to communicate seamlessly while watching the video together[cite: 1]. 
+- Integrated real-time text chat, allowing users to communicate seamlessly while watching the video together. 
 
 ### 2. Live Emoji Reactions
-- Implemented real-time emoji reactions, letting participants react to key moments in the video instantly[cite: 1].
+- Implemented real-time emoji reactions, letting participants react to key moments in the video instantly.
 
 ### 3. Object-Oriented Domain Architecture (OOP)
-- Structured the WebSocket backend around clean OOP principles with dedicated `Room` and `Participant` domain models[cite: 1].
-- Encapsulated room state, participant lifecycles, and playback state mutations inside strongly typed domain classes[cite: 1].
+- Structured the WebSocket backend around clean OOP principles with dedicated `Room` and `Participant` domain models.
+- Encapsulated room state, participant lifecycles, and playback state mutations inside strongly typed domain classes.
 
 ### 4. Dynamic Host Role Transfer
-- Built full Host transfer capabilities[cite: 1].
-- When a Host transfers leadership to another participant, the system automatically demotes the current host to a regular participant and transfers exclusive room permissions in real time[cite: 1].
+- Built full Host transfer capabilities.
+- When a Host transfers leadership to another participant, the system automatically demotes the current host to a regular participant and transfers exclusive room permissions in real time.
 
 ### 5. Persistent Room Storage (Spring Data MongoDB)
-- Integrated **Spring Data MongoDB** to persist room states in a MongoDB Atlas cloud cluster[cite: 1].
-- Room metadata, active video ID, playback state, exact timestamp seeking, and participant lists are saved persistently instead of dying on server restart[cite: 1].
+- Integrated **Spring Data MongoDB** to persist room states in a MongoDB Atlas cloud cluster.
+- Room metadata, active video ID, playback state, exact timestamp seeking, and participant lists are saved persistently instead of dying on server restart.
 
 ### 6. Real-Time Kick & Eviction Protocol
 - Engineered a dedicated WebSocket event channel (`/topic/room/{roomId}/kicked`).
-- Allows room Hosts to forcefully remove users, instantly broadcasting eviction events to ensure immediate client-side disconnection[cite: 1].
+- Allows room Hosts to forcefully remove users, instantly broadcasting eviction events to ensure immediate client-side disconnection.
 
 
 
