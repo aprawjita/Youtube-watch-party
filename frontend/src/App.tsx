@@ -1,4 +1,3 @@
-<p style={{ color: 'red' }}>VERCEL TEST</p>
 import { useState, useEffect, useRef, useCallback } from 'react';
 import YouTube from 'react-youtube';
 import { useWebSocket } from './hooks/useWebSocket';
@@ -19,7 +18,7 @@ function App() {
     const [videoInput, setVideoInput] = useState('');
     const [messages, setMessages] = useState<{sender: string, text: string}[]>([]);
     
-    // RESTORED: Simple state for player to guarantee React reactivity
+    
     const [player, setPlayer] = useState<any>(null);
     const [isMuted, setIsMuted] = useState(true);
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -59,7 +58,7 @@ function App() {
 
         if (action.type === 'CHAT') {
             if (action.isEmoji && action.username !== username) spawnEmoji(action.message);
-            else if (!action.isEmoji) setMessages((prev) => [...prev, { sender: action.username, text: action.message }]);
+            else if (!action.isEmoji && action.username !== username) setMessages((prev) => [...prev, { sender: action.username, text: action.message }]);
             return;
         }
 
@@ -329,7 +328,17 @@ function App() {
                         )}
                         <div className="flex gap-2 items-center">
                             <button onClick={() => setShowEmojiPicker(!showEmojiPicker)} className="p-2.5 bg-[#0a0a0a] border border-gray-700 rounded-lg text-gray-400 hover:text-white hover:border-purple-500 transition-colors"><Smile size={18} /></button>
-                            <input type="text" placeholder="Type a message..." className="flex-1 bg-[#0a0a0a] border border-gray-700 rounded-lg p-2.5 text-white outline-none focus:border-purple-500 text-sm transition-colors" onKeyDown={(e) => { if (e.key === 'Enter') { const t = e.target as HTMLInputElement; if (t.value.trim()) { sendAction({ type: 'CHAT', message: t.value.trim(), username, roomId }); t.value = ''; } } }} />
+                            <input type="text" placeholder="Type a message..." className="flex-1 bg-[#0a0a0a] border border-gray-700 rounded-lg p-2.5 text-white outline-none focus:border-purple-500 text-sm transition-colors" onKeyDown={(e) => { 
+                                if (e.key === 'Enter') { 
+                                    const t = e.target as HTMLInputElement; 
+                                    const text = t.value.trim();
+                                    if (text) { 
+                                        setMessages((prev) => [...prev, { sender: username, text }]);
+                                        sendAction({ type: 'CHAT', message: text, isEmoji: false, username, roomId }); 
+                                        t.value = ''; 
+                                    } 
+                                } 
+                            }} />
                         </div>
                     </div>
                 </div>
